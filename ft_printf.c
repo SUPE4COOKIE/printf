@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mwojtasi <mwojtasi@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: mwojtasi <mwojtasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 03:57:44 by mwojtasi          #+#    #+#             */
-/*   Updated: 2023/11/29 04:32:25 by mwojtasi         ###   ########.fr       */
+/*   Updated: 2023/12/02 18:23:47 by mwojtasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,16 @@ static int	ft_printall(const char c, va_list args)
 		count += ft_printchar(va_arg(args, int));
 	else if (c == 's')
 		count += ft_printstr(va_arg(args, char *));
-	//else if (c == 'p')
-	//	count += ft_printptr(va_arg(args, unsigned long long));
-	//else if (c == 'd' || c == 'i')
-	//	count += ft_printint(va_arg(args, int));
-	//else if (c == 'u')
-	//	count += ft_printuint(va_arg(args, unsigned int));
-	//else if (c == 'x')
-	//	count += ft_printlhex(va_arg(args, unsigned int));
-	//else if (c == 'X')
-	//	count += ft_printuhex(va_arg(args, unsigned int));
+	else if (c == 'p')
+		count += ft_printptr(va_arg(args, unsigned long long));
+	else if (c == 'd' || c == 'i')
+		count += ft_printint(va_arg(args, int), 0);
+	else if (c == 'u')
+		count += ft_printuint(va_arg(args, unsigned int), 0);
+	else if (c == 'x')
+		count += ft_printhexa(va_arg(args, unsigned int), LOW_HEXA, 0);
+	else if (c == 'X')
+		count += ft_printhexa(va_arg(args, unsigned int), UP_HEXA, 0);
 	else if (c == '%')
 		count += ft_printchar('%');
 	return (count);
@@ -55,4 +55,9 @@ int ft_printf(const char *s, ...)
 	}
 	va_end(args);
 	return (count);
+}
+
+int main(void)
+{
+	ft_printf("%x : %d", -42, 42);
 }

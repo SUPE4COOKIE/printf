@@ -1,31 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_int.c                                        :+:      :+:    :+:   */
+/*   print_dec.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mwojtasi <mwojtasi@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: mwojtasi <mwojtasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 04:18:03 by mwojtasi          #+#    #+#             */
-/*   Updated: 2023/11/29 04:19:08 by mwojtasi         ###   ########.fr       */
+/*   Updated: 2023/12/02 18:27:14 by mwojtasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
 
-int	ft_printint(int n, int fd)
+int	ft_printint(int n, int count)
 {
 	long int	nb;
 
 	nb = n;
 	if (nb < 0)
 	{
-		write(fd, "-", 1);
+		if (ft_printchar('-') == -1)
+			return (-1);
+		count++;
 		nb *= -1;
 	}
 	if (nb < 10)
-		write(fd, &(char){nb + '0'}, 1);
+	{
+		if (ft_printchar(nb + '0') == -1)
+			return (-1);
+		return (count++);
+	}
 	else
 	{
-		ft_putnbr_fd((int)(nb / 10), fd);
-		write(fd, &(char){(nb % 10) + '0'}, 1);
+		ft_printint((int)(nb / 10), count++);
+		if (ft_printchar((nb % 10) + '0') == -1)
+			return (-1);
+	}
+}
+
+int	ft_printuint(unsigned int n, int count)
+{
+	if (n < 10)
+		ft_printchar(n + '0');
+	else
+	{
+		ft_printuint((int)(n / 10), count);
+		ft_printchar((n % 10) + '0');
 	}
 }
