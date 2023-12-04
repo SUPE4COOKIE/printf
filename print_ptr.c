@@ -6,7 +6,7 @@
 /*   By: mwojtasi <mwojtasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 15:49:46 by mwojtasi          #+#    #+#             */
-/*   Updated: 2023/12/04 16:30:54 by mwojtasi         ###   ########.fr       */
+/*   Updated: 2023/12/04 17:02:30 by mwojtasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int ft_printptr(unsigned long long i)
 {
 	int	count;
 
-	if (i == NULL)
+	if (i == 0)
 		return (ft_printstr("(nil)"));
 	count = ft_printstr("0x");
 	if (count == -1)

@@ -6,7 +6,7 @@
 /*   By: mwojtasi <mwojtasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 03:57:44 by mwojtasi          #+#    #+#             */
-/*   Updated: 2023/12/04 16:51:18 by mwojtasi         ###   ########.fr       */
+/*   Updated: 2023/12/04 18:28:45 by mwojtasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ static int	ft_printall(const char c, va_list args)
 		return (ft_printhexa(va_arg(args, unsigned int), UP_HEXA, 0));
 	else if (c == '%')
 		return (ft_printchar('%'));
+	return (0);
 }
 
 int ft_printf(const char *s, ...)
@@ -52,11 +53,15 @@ int ft_printf(const char *s, ...)
 			count += tmp;
 		}
 		else
+		{
 			if (ft_printchar((int)s[i]) == -1)
 				return (-1);
+			count++;
+		}
 		i++;
 	}
 	va_end(args);
 	return (count);
 }
+
 

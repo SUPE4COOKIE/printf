@@ -1,4 +1,4 @@
-CFLAGS = -Wall -Wextra -Werror -MMD -MP
+CFLAGS = -MMD -MP
 SRC = ft_printf.c print_char.c print_dec.c print_hex.c print_ptr.c print_string.c
 OBJ = $(SRC:.c=.o)
 NAME = libftprintf.a
