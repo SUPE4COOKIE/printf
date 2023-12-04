@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_string.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mwojtasi <mwojtasi@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: mwojtasi <mwojtasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 04:14:08 by mwojtasi          #+#    #+#             */
-/*   Updated: 2023/11/29 04:17:26 by mwojtasi         ###   ########.fr       */
+/*   Updated: 2023/12/04 16:30:25 by mwojtasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ static int	ft_strlen(const char *s)
 
 int	ft_printstr(char *s)
 {
-	write(1, s, ft_strlen(s));
+	if (write(1, s, ft_strlen(s)) == -1)
+		return (-1);
 	return (ft_strlen(s));
 }
