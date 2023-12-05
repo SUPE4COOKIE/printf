@@ -6,7 +6,7 @@
 /*   By: mwojtasi <mwojtasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 04:18:03 by mwojtasi          #+#    #+#             */
-/*   Updated: 2023/12/04 18:29:28 by mwojtasi         ###   ########.fr       */
+/*   Updated: 2023/12/05 16:26:21 by mwojtasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,14 @@ int	ft_printuint(unsigned int n, int count)
 {
 	int tmp;
 
-	if (n < 10)
+	if (n > 9)
 	{
-		if (ft_printchar(n + '0') == -1)
+		tmp = ft_printint((n / 10), ++count);
+		if (ft_printchar((n % 10) + '0') == -1)
 			return (-1);
-		return (++count);
+		return (tmp);
 	}
-	else
-	{
-		tmp = ft_printint((int)(n / 10), ++count);
-		if ((ft_printchar((n % 10) + '0') == -1 || tmp == -1))
-			return (-1);
-		count += tmp;
-	}
+	if (ft_printchar(n + '0') == -1)
+		return (-1);
+	return (++count);
 }

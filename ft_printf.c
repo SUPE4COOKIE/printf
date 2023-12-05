@@ -6,12 +6,12 @@
 /*   By: mwojtasi <mwojtasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 03:57:44 by mwojtasi          #+#    #+#             */
-/*   Updated: 2023/12/04 18:28:45 by mwojtasi         ###   ########.fr       */
+/*   Updated: 2023/12/05 16:46:43 by mwojtasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
+
 static int	ft_printall(const char c, va_list args)
 {
 	if (c == 'c')
@@ -63,5 +63,9 @@ int ft_printf(const char *s, ...)
 	va_end(args);
 	return (count);
 }
-
+int main(void)
+{
+	ft_printf(" %x ", -99);
+	printf(" %x ", -99);
+}
 

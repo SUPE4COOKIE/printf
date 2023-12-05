@@ -6,7 +6,7 @@
 /*   By: mwojtasi <mwojtasi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 16:01:31 by mwojtasi          #+#    #+#             */
-/*   Updated: 2023/12/04 16:32:28 by mwojtasi         ###   ########.fr       */
+/*   Updated: 2023/12/05 16:48:02 by mwojtasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,18 @@
 
 int	ft_printhexa(unsigned long long n, char *base, int count)
 {
-	if (n < 10)
+	int tmp;
+
+	if (n > 9)
 	{
-		if (ft_printchar(n + '0') == -1)
-			return (-1);
-		return (count++);
+		tmp = ft_printhexa((n / 16), base, ++count);
+		if (base[(n % 16)] == 0)
+			printf
+			if (ft_printchar(base[(n % 16)]) == -1)
+				return (-1);
+		return (tmp);
 	}
-	else
-	{
-		if (ft_printint((int)(n / 16), count++) == -1)
-			return (-1);
-		if (ft_printchar((n % 16) + '0') == -1)
-			return (-1);
-	}
+	if (ft_printchar(base[n]) == -1)
+		return (-1);
+	return (++count);
 }
