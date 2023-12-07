@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_hex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mwojtasi <mwojtasi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mwojtasi <mwojtasi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 16:01:31 by mwojtasi          #+#    #+#             */
-/*   Updated: 2023/12/05 16:48:02 by mwojtasi         ###   ########.fr       */
+/*   Updated: 2023/12/07 05:01:54 by mwojtasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,13 @@
 
 int	ft_printhexa(unsigned long long n, char *base, int count)
 {
-	int tmp;
+	int	tmp;
 
-	if (n > 9)
+	if (n > 15)
 	{
 		tmp = ft_printhexa((n / 16), base, ++count);
-		if (base[(n % 16)] == 0)
-			printf
-			if (ft_printchar(base[(n % 16)]) == -1)
-				return (-1);
+		if (ft_printchar(base[(n % 16)]) == -1)
+			return (-1);
 		return (tmp);
 	}
 	if (ft_printchar(base[n]) == -1)

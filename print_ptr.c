@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int ft_printptr(unsigned long long i)
+int	ft_printptr(unsigned long long i)
 {
 	int	count;
 

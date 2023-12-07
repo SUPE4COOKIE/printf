@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_dec.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mwojtasi <mwojtasi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mwojtasi <mwojtasi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 04:18:03 by mwojtasi          #+#    #+#             */
-/*   Updated: 2023/12/05 16:26:21 by mwojtasi         ###   ########.fr       */
+/*   Updated: 2023/12/07 05:01:24 by mwojtasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_printint(long int n, int count)
 {
 	int	tmp;
-	
+
 	if (n < 0)
 	{
 		if (ft_printchar('-') == -1)
@@ -37,7 +37,7 @@ int	ft_printint(long int n, int count)
 
 int	ft_printuint(unsigned int n, int count)
 {
-	int tmp;
+	int	tmp;
 
 	if (n > 9)
 	{

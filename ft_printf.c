@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mwojtasi <mwojtasi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mwojtasi <mwojtasi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 03:57:44 by mwojtasi          #+#    #+#             */
-/*   Updated: 2023/12/05 16:46:43 by mwojtasi         ###   ########.fr       */
+/*   Updated: 2023/12/07 04:55:03 by mwojtasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ static int	ft_printall(const char c, va_list args)
 	return (0);
 }
 
-int ft_printf(const char *s, ...)
+int	ft_printf(const char *s, ...)
 {
-	int	count;
-	int tmp;
-	int	i;
+	int		count;
+	int		tmp;
+	int		i;
 	va_list	args;
 
 	va_start(args, s);
@@ -52,20 +52,10 @@ int ft_printf(const char *s, ...)
 				return (-1);
 			count += tmp;
 		}
-		else
-		{
-			if (ft_printchar((int)s[i]) == -1)
-				return (-1);
-			count++;
-		}
+		else if (++count && ft_printchar((int)s[i]) == -1)
+			return (-1);
 		i++;
 	}
 	va_end(args);
 	return (count);
 }
-int main(void)
-{
-	ft_printf(" %x ", -99);
-	printf(" %x ", -99);
-}
-
