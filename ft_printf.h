@@ -6,7 +6,7 @@
 /*   By: mwojtasi <mwojtasi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 03:50:50 by mwojtasi          #+#    #+#             */
-/*   Updated: 2023/12/07 05:02:38 by mwojtasi         ###   ########.fr       */
+/*   Updated: 2023/12/10 08:02:51 by mwojtasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 # include <stdarg.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h>
 # define UP_HEXA "0123456789ABCDEF"
 # define LOW_HEXA "0123456789abcdef"
 
