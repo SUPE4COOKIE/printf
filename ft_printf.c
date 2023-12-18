@@ -49,7 +49,7 @@ int	ft_printf(const char *s, ...)
 		{
 			tmp = ft_printall(s[++i], args);
 			if (tmp == -1)
-				return (-1);
+				return (va_end(args), -1);
 			count += tmp;
 		}
 		else if (++count && ft_printchar((int)s[i]) == -1)
