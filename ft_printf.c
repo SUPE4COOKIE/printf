@@ -6,7 +6,7 @@
 /*   By: mwojtasi <mwojtasi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 03:57:44 by mwojtasi          #+#    #+#             */
-/*   Updated: 2023/12/10 08:08:18 by mwojtasi         ###   ########.fr       */
+/*   Updated: 2023/12/24 15:11:52 by mwojtasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ int	ft_printf(const char *s, ...)
 	int		i;
 	va_list	args;
 
+	if (!s)
+		return (-1);
 	va_start(args, s);
 	count = 0;
 	i = 0;
