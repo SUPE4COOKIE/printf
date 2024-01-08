@@ -6,7 +6,7 @@
 /*   By: mwojtasi <mwojtasi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 04:14:08 by mwojtasi          #+#    #+#             */
-/*   Updated: 2023/12/07 05:01:32 by mwojtasi         ###   ########.fr       */
+/*   Updated: 2024/01/08 01:19:27 by mwojtasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,22 @@
 
 static int	ft_strlen(const char *s)
 {
-	int	count;
+	size_t	count;
 
 	count = 0;
 	while (s[count])
 		count++;
-	return (count);
+	return ((int)count);
 }
 
 int	ft_printstr(char *s)
 {
+	int	count;
+
 	if (!s)
 		return (ft_printstr("(null)"));
-	if (write(1, s, ft_strlen(s)) == -1)
+	count = ft_strlen(s);
+	if (write(1, s, count) == -1)
 		return (-1);
-	return (ft_strlen(s));
+	return (count);
 }

@@ -6,7 +6,7 @@
 /*   By: mwojtasi <mwojtasi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 03:57:44 by mwojtasi          #+#    #+#             */
-/*   Updated: 2023/12/24 15:11:52 by mwojtasi         ###   ########.fr       */
+/*   Updated: 2024/01/08 01:14:34 by mwojtasi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	ft_printf(const char *s, ...)
 {
 	int		count;
 	int		tmp;
-	int		i;
+	size_t	i;
 	va_list	args;
 
 	if (!s)
