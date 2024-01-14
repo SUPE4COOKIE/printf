@@ -29,6 +29,8 @@ int	ft_printstr(char *s)
 	if (!s)
 		return (ft_printstr("(null)"));
 	count = ft_strlen(s);
+	if (count < 0)
+		return (-1);
 	if (write(1, s, count) == -1)
 		return (-1);
 	return (count);
